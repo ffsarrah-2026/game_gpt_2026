@@ -126,7 +126,13 @@ public class GamePanel extends JPanel implements Runnable {
         g.drawString("Score: "     + game.getScore(),     10,  26);
         g.drawString("Resources: " + game.getResources(), 160, 26);
         g.drawString("Base HP: "   + game.getBase().getLifePoints(), 340, 26);
-        g.drawString("[1] Cannon  [2] Rapid  [N] Next Wave", 520, 26);
+        // Affiche la vague courante
+        game.getWaveManager().ifPresent(wm ->
+                g.drawString("Wave: " + wm.getCurrentWave()
+                        + "/" + wm.getTotalWaves(), 490, 26)
+        );
+
+        g.drawString("[1] Cannon  [2] Rapid  [N] Next Wave", 600, 26);
     }
 
     private void drawGameOver(Graphics2D g) {
