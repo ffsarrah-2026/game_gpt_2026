@@ -35,11 +35,26 @@ public class GamePanel extends JPanel implements Runnable {
         addKeyListener(input);
         addMouseListener(input);
     }
+//  public GamePanel(Game game, int width, int height) {
+//      this.game = game;
+//
+//      setPreferredSize(new Dimension(width, height));
+//      setBackground(new Color(34, 85, 34));
+//      setFocusable(true);
+//
+//      double sx = width  / 1000.0;
+//      double sy = height / 600.0;
+//
+//      this.input = new InputHandler(game, sx, sy);
+//      addKeyListener(input);
+//      addMouseListener(input);
+//    }
 
     public void startGameLoop() {
         gameThread = new Thread(this);
         gameThread.start();
     }
+
 
     // ── Game loop ──────────────────────────────────
     @Override
